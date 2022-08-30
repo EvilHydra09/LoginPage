@@ -97,10 +97,11 @@ public class LoginPage extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(getApplicationContext(), "Login Sucessful", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),HomePage.class));
+                            finish();
                         }
                         else{
                             Toast.makeText(getApplicationContext(), "Error "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            mremember.setVisibility(View.GONE);
+                            progressBar.setVisibility(View.GONE);
                         }
 
                     }

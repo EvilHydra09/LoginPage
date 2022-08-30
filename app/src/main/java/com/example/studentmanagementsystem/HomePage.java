@@ -25,6 +25,7 @@ ActivityHomePageBinding binding;
                 finish();
             }
         });
+
     }
 
 

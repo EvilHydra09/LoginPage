@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "666008198755-mv9c0lr4cbu1td1ae5onga18bjfmo0f1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.studentmanagementsystem",
+            "certificate_hash": "01b2533937101195205cfe3c945a6c674964c393"
+          }
+        },
+        {
           "client_id": "666008198755-ldq3p8cd40frm5fgp3i8msl9rft0bjet.apps.googleusercontent.com",
           "client_type": 3
         }

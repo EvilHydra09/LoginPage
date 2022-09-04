@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,10 +45,13 @@ public class Register extends AppCompatActivity {
     TextView signintxt;
     ProgressBar progressBar;
 
+
     // Fire Base DataBase
     FirebaseAuth mAuth;
     FirebaseFirestore mStore;
     String userId;
+
+
     private BeginSignInRequest signInRequest;
     SignInClient oneTapClient;
     private static final int REQ_ONE_TAP = 2;  // Can be any integer unique to the Activity.
@@ -57,6 +62,18 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        // Background Work
+        ScrollView scrollView = findViewById(R.id.gradient_listback1);
+        AnimationDrawable animationDrawable = (AnimationDrawable) scrollView.getBackground();
+        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start();
+
+
+
+
+
         names = findViewById(R.id.name);
         phones = findViewById(R.id.phone);
         emails = findViewById(R.id.email);
@@ -162,6 +179,7 @@ public class Register extends AppCompatActivity {
 
 
                             startActivity(new Intent(getApplicationContext(), HomePage.class));
+                            finish();
                         }
                         else {
                             Toast.makeText(Register.this, "Error "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
